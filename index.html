@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón de prueba con JS externo</title>
+</head>
+
+<body>
+    <button id="b-send-notification" onclick = sendNotification() </button>>Haz clic aquí</button>
+
+    <script src="js/script.js"></script>
+
+    <script src="/js/sdk.min.js" onload="indigitall.init({
+        appKey: '18c99af0-703b-460f-ada7-c18e8b4d154c',
+        urlDeviceApi: 'https://am1.device-api.indigitall.com/v1',
+        workerPath: './js/worker.min.js',
+        requestLocation: true
+    })" async>
+    </script>
+</body>
+
+</html>
