@@ -7,18 +7,15 @@ const sendNotification = async () => {
     console.log('API_KEY:', API_KEY);
     console.log('SERVER_KEY:', SERVER_KEY);
     try {
-        const response = await fetch(`https://am1.device-api.indigitall.com`, {
-
-            method: 'GET',
+        const response = await fetch(`https://api.indigitall.com/v1/auth`, {
+            method: 'POST',
             headers: {
                 accept: 'application/json',
-                'Content-Type': 'application/json',
-                Authorization: `ServerKey ${SERVER_KEY}`
-            },/* 
-            body: JSON.stringify({
-                name: "pinkNotification"
-            }),*/
-        }); 
+                'content-type': 'application/json'/* ,
+                Authorization: 'ServerKey ' + SERVER_KEY */
+            },
+            body: JSON.stringify({ mail: 'luis.nocedal@inbest.cloud', password: '0pFcjLpOD34538' })
+        });
 
         if (response.ok) {
             const data = await response.json();
@@ -27,10 +24,11 @@ const sendNotification = async () => {
             const errorData = await response.json();
             console.error('Error:', errorData);
             console.error('Error:', response);
-            alert('Error al enviar la notificación: ' + errorData.message);
+            alert('Error al enviar la notificación: ' /* + errorData.message */);
         }
     } catch (error) {
         console.error('Error:', error);
+        console.error('Error:', error.message);
         alert('No se pudo enviar la notificación');
     }
 
