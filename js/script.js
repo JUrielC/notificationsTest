@@ -7,7 +7,7 @@ const sendNotification = async () => {
     console.log('API_KEY:', API_KEY);
     console.log('SERVER_KEY:', SERVER_KEY);
     try {
-        const response = await fetch(`https://api.indigitall.com/v1/campaign/${CAMPAIGN_ID}`, {
+        const response = await fetch(`https://am1.device-api.indigitall.com/v1/campaign/${CAMPAIGN_ID}`, {
 
             method: 'PUT',
             headers: {
