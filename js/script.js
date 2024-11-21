@@ -1,19 +1,19 @@
 const sendNotification = async () => {
   
         const API_KEY = '18c99af0-703b-460f-ada7-c18e8b4d154c';
-        const SERVER_KEY = '100889'
+        const SERVER_KEY = 'f955794e-5305-4759-af6a-2e0f87770b3e'
         const CAMPAIGN_ID = '1000065543';
         console.log('Enviando notificación...');
         console.log('API_KEY:', API_KEY);
         console.log('SERVER_KEY:', SERVER_KEY);
         try {
-            const response = await fetch(  `https://api.indigitall.com/v1/campaign?page=0&limit=0&applicationId=${100186}` , {
+            const response = await fetch(  `https://api.indigitall.com/v1/campaign?page=0&limit=0&applicationId=${API_KEY}` , {
 
                 method: 'GET',
                 headers: {
                     accept: 'application/json',/* 
                     'Content-Type': 'application/json', */
-                    Authorization: `ServerKey ${SERVER_KEY}`
+                    Authorization: `Bearer ${SERVER_KEY}`
                 }/*, 
                 body: JSON.stringify({ 
                     name: "test Notification",
