@@ -7,18 +7,18 @@ const sendNotification = async () => {
     console.log('API_KEY:', API_KEY);
     console.log('SERVER_KEY:', SERVER_KEY);
     try {
-        const response = await fetch(`https://am1.device-api.indigitall.com/v1/campaign/${CAMPAIGN_ID}`, {
+        const response = await fetch(`https://am1.device-api.indigitall.com`, {
 
-            method: 'PUT',
+            method: 'GET',
             headers: {
                 accept: 'application/json',
                 'Content-Type': 'application/json',
                 Authorization: `ServerKey ${SERVER_KEY}`
-            },
+            },/* 
             body: JSON.stringify({
                 name: "pinkNotification"
-            }),
-        });
+            }),*/
+        }); 
 
         if (response.ok) {
             const data = await response.json();
