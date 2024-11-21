@@ -13,7 +13,7 @@ const sendNotification = async () => {
             headers: {
                 accept: 'application/json',
                 'Content-Type': 'application/json',
-                Authorization: `ApiKey ${API_KEY}`
+                Authorization: `ServerKey ${SERVER_KEY}`
             },
             body: JSON.stringify({
                 name: "pinkNotification"
