@@ -7,14 +7,16 @@ const sendNotification = async () => {
     console.log('API_KEY:', API_KEY);
     console.log('SERVER_KEY:', SERVER_KEY);
     try {
-        const response = await fetch(`https://api.indigitall.com/v1/auth`, {
+        const response = await fetch(`https://am1.api.indigitall.com/v1/campaign/${CAMPAIGN_ID}/send/all`, {
             method: 'POST',
             headers: {
                 accept: 'application/json',
                 'content-type': 'application/json'/* */,
-                Authorization: 'ServerKey ' + SERVER_KEY 
+                Authorization: 'ServerKey ' + SERVER_KEY    
             },
-            body: JSON.stringify({ mail: 'luis.nocedal@inbest.cloud', password: '0pFcjLpOD34538' })
+            body: JSON.stringify({
+                
+            })
         });
 
         if (response.ok) {
