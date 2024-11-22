@@ -11,8 +11,8 @@ const sendNotification = async () => {
             method: 'POST',
             headers: {
                 accept: 'application/json',
-                'content-type': 'application/json'/* ,
-                Authorization: 'ServerKey ' + SERVER_KEY */
+                'content-type': 'application/json'/* */,
+                Authorization: 'ServerKey ' + SERVER_KEY 
             },
             body: JSON.stringify({ mail: 'luis.nocedal@inbest.cloud', password: '0pFcjLpOD34538' })
         });
